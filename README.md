@@ -37,7 +37,7 @@ The appearance of the GUI may differ depending on the operating system and scree
 
 Sample outputs of the simulator are available in [2].
 
-For detailed user manual, please refer to .pdf in this repository.
+For detailed explanation of how to use the software, please refer to the user manual (.pdf) in this repository.
 
 # Reference
 [1] "An assessment tool for Computer-Assisted Semen Analysis (CASA) algorithms" Simulation Paper - citation not finalized
