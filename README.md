@@ -15,4 +15,4 @@ If you find these images useful in your research, please cite us using the follo
  
 # Sperm Simulator - NJIT Data Fusion Lab
 
-[My image](https://github.com/JiwonChoi-NJIT/NJIT_semen_images_Data_Fusion_Lab/blob/main/Sperm_Simulator_V6_GUI.PNG)
+[My image](https://github.com/JiwonChoi-NJIT/NJIT_sperm_simulator/blob/main/Sperm_Simulator_V6_GUI.PNG)
