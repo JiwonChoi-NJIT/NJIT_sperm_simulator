@@ -13,7 +13,7 @@ If you find this software useful in your research, please cite us using the foll
  
  ```
  
-# Sperm Simulator - NJIT Decision Fusion Lab
+# Sperm Simulator - NJIT Data Fusion Lab
 
 This repository contains the software and MATLAB codes for Sperm Simulator. The methods of simulation are explained in [1].
 
@@ -42,4 +42,4 @@ For detailed explanation of how to use the software, please refer to the user ma
 # Reference
 [1] "An assessment tool for Computer-Assisted Semen Analysis (CASA) algorithms" Simulation Paper - citation not finalized
 
-[2] Choi, J.-w., Alkhoury, L., Kam, M.: Human Semen Images - NJIT Decision Fusion Lab, https://github.com/JiwonChoi-NJIT/NJIT_semen_images_Data_Fusion_Lab (2021 (accessed November 24, 2021))
+[2] Choi, J.-w., Alkhoury, L., Kam, M.: Human Semen Images - NJIT Data Fusion Lab, https://github.com/JiwonChoi-NJIT/NJIT_semen_images_Data_Fusion_Lab (2021 (accessed November 24, 2021))
