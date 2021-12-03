@@ -1,4 +1,4 @@
-If you find these images useful in your research, please cite us using the following .bib entry:
+If you find this software useful in your research, please cite us using the following .bib entry:
  
  ```
 @article{Choi2021Sim,
