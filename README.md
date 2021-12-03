@@ -13,7 +13,7 @@ If you find this software useful in your research, please cite us using the foll
  
  ```
  
-# Sperm Simulator - NJIT Data Fusion Lab
+# Sperm Simulator - NJIT Decision Fusion Lab
 
 This repository contains the software and MATLAB codes for Sperm Simulator. The methods of simulation are explained in [1].
 
