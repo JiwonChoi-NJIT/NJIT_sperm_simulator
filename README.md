@@ -19,7 +19,7 @@ This repository contains the software and MATLAB codes for Sperm Simulator. The 
 
 To install the stand-alone software for the simulator, please download and run SpermSimulator_V6_00-installer.exe. The software has been tested for Windows 10.
 
-The software was built using the MATLAB Compiler (MATLAB version R2020b) and requires MATLAB Runtime to run. The installer should prompt the user to download the MATLAB Runtime. One is able to also simply download and install MATLAB Runtime using the following link:
+The software was built using the MATLAB Compiler (MATLAB version R2020b) and requires MATLAB Runtime to run. The installer should prompt the user to download the MATLAB Runtime. One is able to also download and install MATLAB Runtime using the following link:
 https://www.mathworks.com/products/compiler/matlab-runtime.html
 
 The software does not require MATLAB license. 
