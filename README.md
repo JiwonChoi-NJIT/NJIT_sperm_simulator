@@ -4,11 +4,10 @@ If you find this software useful in your research, please cite us using the foll
 @article{Choi2021Sim,
   title={An assessment tool for Computer-Assisted Semen Analysis (CASA) algorithms},
   author={Choi, Ji-won and Alkhoury, Ludvik and Urbano, Leonardo and Masson, Puneet and VerMilyea, Matthew and Kam, Moshe},
-  journal={},
-  volume={},
-  pages={},
-  year={},
-  publisher={}
+  journal={Scientific Reports},
+  volume={12},
+  year={2022},
+  publisher={Nature Portfolio}
 }
  
  ```
