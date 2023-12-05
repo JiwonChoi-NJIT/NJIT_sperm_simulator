@@ -40,14 +40,14 @@ varargout{1} = handles.output;
 
 % --- Executes on button press in Sim_start.
 function Sim_start_Callback(hObject, eventdata, handles)
-% numSimulations = 1;
+folderSelected = uigetdir(matlabroot,'MATLAB Root Folder');
 numSimulations = str2double(get(handles.Number_of_videos,'String'));
 for i = 1:numSimulations
-    runSimulation(hObject, eventdata, handles, num2str(i))
+    runSimulation(hObject, eventdata, handles, num2str(i), folderSelected)
 end
 
 % --- Creates simulation and stores files.
-function runSimulation(hObject, eventdata, handles, iteracion)
+function runSimulation(hObject, eventdata, handles, iteracion, folderSelected)
 
 if get(handles.RNG_setting,'value') == 1
     rng(str2double(get(handles.RNG_index,'String')))
@@ -504,7 +504,9 @@ end
 close(f)
 % Option to save data as excel
 if get(handles.ExcelSaveYN,'Value') == 1
-   D_name = strcat(get(handles.Name_string,'String'),'.csv');
+
+    
+   D_name = strcat(strcat(folderSelected, '\'), strcat(strcat(get(handles.Name_string,'String'), strcat('_', iteracion)),'.csv'));
    csvwrite(D_name,Z);
 %    D_name = strcat(get(handles.Name_string,'String'),'.xlsx');
 %    xlswrite(D_name,Z);
@@ -514,14 +516,14 @@ end
 %% Video Save option
 if get(handles.save_yn,'Value') == 1
     % Open a movie file to store the movie in
-    V_name = strcat(strcat(get(handles.Name_string,'String'), strcat('_', iteracion)),'.mp4');
+    V_name = strcat(strcat(folderSelected, '\'), strcat(strcat(get(handles.Name_string,'String'), strcat('_', iteracion)),'.mp4'));
     writerObj = VideoWriter(V_name,'MPEG-4');
     writerObj.FrameRate = ceil(str2double(get(handles.FPS,'String')));
     writerObj.Quality = 100;
     open(writerObj);
     if get(handles.Track_Option,'value') ~= 1 % Separate File to save video with tracks
         % Open a movie file to store the movie in
-        V_name2 = strcat(get(handles.Name_string,'String'),'_tracks.mp4');
+        V_name2 = strcat(strcat(folderSelected, '/'), strcat(get(handles.Name_string,'String'),'_tracks.mp4'));
         writerObj2 = VideoWriter(V_name2,'MPEG-4');
         writerObj2.FrameRate = writerObj.FrameRate;
         writerObj2.Quality = 100;
