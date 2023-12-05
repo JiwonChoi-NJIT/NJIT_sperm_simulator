@@ -40,13 +40,12 @@ varargout{1} = handles.output;
 
 % --- Executes on button press in Sim_start.
 function Sim_start_Callback(hObject, eventdata, handles)
-% numSimulations = 1;
-numSimulations = str2double(get(handles.Number_of_videos,'String'));
+numSimulations = 1;
 for i = 1:numSimulations
-    runSimulation(hObject, eventdata, handles, num2str(i))
+    ejecutarCodigo(hObject, eventdata, handles, num2str(i))
 end
 
-% --- Creates simulation and stores files.
+% --- Executes on button press in Sim_start.
 function runSimulation(hObject, eventdata, handles, iteracion)
 
 if get(handles.RNG_setting,'value') == 1
@@ -1718,29 +1717,6 @@ function Background_I_L_Callback(hObject, eventdata, handles)
 % --- Executes during object creation, after setting all properties.
 function Background_I_L_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to Background_I_L (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-
-function Number_of_videos_Callback(hObject, eventdata, handles)
-% hObject    handle to number_of_videos (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of Number_of_videos as text
-%        str2double(get(hObject,'String')) returns contents of Number_of_videos as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function Number_of_videos_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to number_of_videos (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
