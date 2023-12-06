@@ -40,22 +40,13 @@ varargout{1} = handles.output;
 
 % --- Executes on button press in Sim_start.
 function Sim_start_Callback(hObject, eventdata, handles)
-if get(handles.ExcelSaveYN,'Value') == 1 || get(handles.save_yn,'Value') == 1
-    folderSelected = uigetdir(matlabroot,'MATLAB Root Folder');
-    if isequal(folderSelected,0)
-        return;
-    end
-else
-    msgbox('No simulation to be saved. Please select to save a video or CSV')
-
-end
-numSimulations = str2double(get(handles.Number_of_videos,'String'));
+numSimulations = 1;
 for i = 1:numSimulations
-    runSimulation(hObject, eventdata, handles, num2str(i), folderSelected)
+    ejecutarCodigo(hObject, eventdata, handles, num2str(i))
 end
 
-% --- Creates simulation and stores files.
-function runSimulation(hObject, eventdata, handles, iteracion, folderSelected)
+% --- Executes on button press in Sim_start.
+function runSimulation(hObject, eventdata, handles, iteracion)
 
 if get(handles.RNG_setting,'value') == 1
     rng(str2double(get(handles.RNG_index,'String')))
@@ -512,9 +503,7 @@ end
 close(f)
 % Option to save data as excel
 if get(handles.ExcelSaveYN,'Value') == 1
-
-    
-   D_name = strcat(strcat(folderSelected, '\'), strcat(strcat(get(handles.Name_string,'String'), strcat('_', iteracion)),'.csv'));
+   D_name = strcat(get(handles.Name_string,'String'),'.csv');
    csvwrite(D_name,Z);
 %    D_name = strcat(get(handles.Name_string,'String'),'.xlsx');
 %    xlswrite(D_name,Z);
@@ -524,14 +513,14 @@ end
 %% Video Save option
 if get(handles.save_yn,'Value') == 1
     % Open a movie file to store the movie in
-    V_name = strcat(strcat(folderSelected, '\'), strcat(strcat(get(handles.Name_string,'String'), strcat('_', iteracion)),'.mp4'));
+    V_name = strcat(strcat(get(handles.Name_string,'String'), strcat('_', iteracion)),'.mp4');
     writerObj = VideoWriter(V_name,'MPEG-4');
     writerObj.FrameRate = ceil(str2double(get(handles.FPS,'String')));
     writerObj.Quality = 100;
     open(writerObj);
     if get(handles.Track_Option,'value') ~= 1 % Separate File to save video with tracks
         % Open a movie file to store the movie in
-        V_name2 = strcat(strcat(folderSelected, '/'), strcat(get(handles.Name_string,'String'),'_tracks.mp4'));
+        V_name2 = strcat(get(handles.Name_string,'String'),'_tracks.mp4');
         writerObj2 = VideoWriter(V_name2,'MPEG-4');
         writerObj2.FrameRate = writerObj.FrameRate;
         writerObj2.Quality = 100;
@@ -1728,29 +1717,6 @@ function Background_I_L_Callback(hObject, eventdata, handles)
 % --- Executes during object creation, after setting all properties.
 function Background_I_L_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to Background_I_L (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-
-function Number_of_videos_Callback(hObject, eventdata, handles)
-% hObject    handle to number_of_videos (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of Number_of_videos as text
-%        str2double(get(hObject,'String')) returns contents of Number_of_videos as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function Number_of_videos_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to number_of_videos (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
