@@ -40,7 +40,15 @@ varargout{1} = handles.output;
 
 % --- Executes on button press in Sim_start.
 function Sim_start_Callback(hObject, eventdata, handles)
-folderSelected = uigetdir(matlabroot,'MATLAB Root Folder');
+if get(handles.ExcelSaveYN,'Value') == 1 || get(handles.save_yn,'Value') == 1
+    folderSelected = uigetdir(matlabroot,'MATLAB Root Folder');
+    if isequal(folderSelected,0)
+        return;
+    end
+else
+    msgbox('No simulation to be saved. Please select to save a video or CSV')
+
+end
 numSimulations = str2double(get(handles.Number_of_videos,'String'));
 for i = 1:numSimulations
     runSimulation(hObject, eventdata, handles, num2str(i), folderSelected)
